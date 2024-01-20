@@ -3,8 +3,8 @@
 pragma solidity ^0.8.18;
 
 import {Test, console} from "forge-std/Test.sol";
-import {FundMe} from "../src/FundMe.sol";
-import {DeployFundMe} from "../script/DeployFundMe.s.sol";
+import {FundMe} from "../../src/FundMe.sol";
+import {DeployFundMe} from "../../script/DeployFundMe.s.sol";
 
 contract FundMeTest is Test {
     FundMe fundMe;
@@ -36,7 +36,8 @@ contract FundMeTest is Test {
     }
 
     function testFundFailsWithoutEnoughETH() public {
-        vm.expectRevert(); // hey, the next line, should revert!
+        vm.expectRevert(); 
+        // hey, the next line, should revert!
         //assert(this tx fails/revert)
         fundMe.fund(); //send 0 value
     }
